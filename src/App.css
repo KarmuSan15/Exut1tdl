@@ -1,0 +1,56 @@
+/* src/App.css */
+
+/* Estilos generales para el contenedor raíz */
+#root {
+  max-width: 1280px; /* Máximo ancho del contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 2rem; /* Espaciado interno alrededor del contenido */
+  text-align: center; /* Centra el texto dentro del contenedor */
+}
+
+/* Estilos para la aplicación en general */
+.App {
+  display: flex; /* Utiliza flexbox para la disposición de los elementos */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  flex-direction: column; /* Alinea las tarjetas verticalmente */
+}
+
+/* Contenedor para las noticias */
+.noticias-container {
+  display: grid; /* Utiliza un grid para la disposición de las tarjetas */
+  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Cada tarjeta ocupará el 100% del ancho disponible */
+  gap: 1.5rem; /* Espaciado entre las tarjetas */
+  width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+/* Para que las tarjetas sean responsivas y se adapten al tamaño de la pantalla */
+.noticia-card {
+  width: 100%; /* Ocupa todo el ancho de su contenedor */
+  max-width: 100%; /* Máximo ancho para las tarjetas */
+  flex-grow: 1; /* Permite que la tarjeta crezca si hay espacio */
+}
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .noticias-container {
+    grid-template-columns: 1fr; /* En pantallas más pequeñas, las tarjetas ocupan todo el ancho */
+  }
+  .noticia-card {
+    width: 100%; /* Cada tarjeta ocupará el 100% del ancho disponible */
+    margin-bottom: 1rem; /* Espaciado entre tarjetas */
+  }
+  
+  .noticia-card img {
+    width: 100%; /* Asegúrate de que la imagen ocupe el 100% del ancho */
+    height: auto; /* Mantiene la relación de aspecto */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+  }
+}
+
+/* Mejora la responsividad adicional */
+@media (max-width: 768px) {
+  .noticias-container {
+    flex-direction: column; /* Las tarjetas se apilan en pantallas pequeñas */
+  }
+}
